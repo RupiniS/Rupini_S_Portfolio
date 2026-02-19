@@ -2,31 +2,36 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 40px 0; /* Space around the 'paper' */
-    background-color: #d1d5db; /* Grey background to make the sheet stand out */
+    padding: 40px 0; 
+    background-color: #d1d5db; /* Grey background that fills the screen */
     display: flex;
-    justify-content: center; /* Centers the container on the screen */
+    flex-direction: column;   /* Ensures content flows vertically */
+    align-items: center;      /* Centers the A4 container horizontally */
+    min-height: 100vh;        /* Keeps grey background full screen */
 }
 
 /* The A4 Sheet Container */
 .page-container {
     background-color: white;
-    width: 210mm; /* A4 Width */
-    min-height: 297mm; /* A4 Height */
+    width: 210mm;             /* Standard A4 Width */
+    min-height: 297mm;        /* Starts at A4 height */
+    height: auto;             /* ALLOWS THE BOX TO GROW WITH YOUR TEXT */
     padding: 50px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15); /* Shadow for depth */
-    text-align: left; /* Aligns all text inside to the left */
-    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15); 
+    text-align: left;         /* Keeps resume text professional and left-aligned */
+    box-sizing: border-box;   /* Prevents padding from breaking the width */
+    display: block;
+    overflow: visible;        /* Ensures content doesn't get hidden */
 }
 
 /* Header Styling */
 header {
-    background-color: #0a66c2;
+    background-color: #0a66c2; /* LinkedIn Blue */
     color: white;
     padding: 50px 20px;
-    /* Pulls the header to the very edges of the container */
+    /* This makes the blue banner touch the edges of the white sheet */
     margin: -50px -50px 30px -50px; 
-    text-align: center; /* Keeps header text centered */
+    text-align: center; 
 }
 
 .button {
@@ -47,7 +52,9 @@ header {
 
 /* Section Styling */
 section {
-    padding: 20px 0; /* Adjusted padding for better flow on the sheet */
+    padding: 15px 0;
+    width: 100%;
+    clear: both; /* Prevents layout overlapping */
 }
 
 h2 {
@@ -55,6 +62,18 @@ h2 {
     border-bottom: 2px solid #0a66c2;
     padding-bottom: 5px;
     margin-top: 30px;
+    font-size: 1.4rem;
+}
+
+h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #555;
 }
 
 /* Technical Skills Grid */
@@ -62,15 +81,26 @@ h2 {
     display: flex;
     flex-wrap: wrap;       
     list-style-type: disc; 
-    padding-left: 20px;    /* Indent bullet points from the left */
+    padding-left: 20px;    
     margin: 20px 0;        
-    text-align: left;      
 }
 
 .skills-grid li {
-    width: 33%;            /* Clean 3-column layout */
+    width: 33.33%;         /* Clean 3-column layout */
     margin-bottom: 10px;
     font-size: 14px;
+    color: #444;
+}
+
+/* Standard List Styling for Experience/Achievements */
+ul {
+    margin-top: 5px;
+}
+
+ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #444;
 }
 
 /* Footer Styling */
@@ -78,7 +108,8 @@ footer {
     background-color: #222;
     color: white;
     padding: 20px;
-    margin: 40px -50px -50px -50px; /* Pulls footer to the edges */
+    /* Touches edges and stays at bottom of the white sheet */
+    margin: 40px -50px -50px -50px; 
     text-align: center;
 }
 
@@ -90,7 +121,12 @@ footer {
         padding: 20px;
     }
     
+    header, footer {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
     .skills-grid li {
-        width: 100%;
+        width: 50%; /* 2 columns on small mobile */
     }
 }
