@@ -36,3 +36,26 @@ footer
     color: white;
     padding: 10px;
 }
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;       /* Allows items to move to the next line */
+    list-style-type: disc; /* Keeps the bullet points */
+    justify-content: center;
+    max-width: 900px;      /* Keeps the list from stretching too wide */
+    margin: 0 auto;        /* Centers the whole list block */
+    padding: 0;
+    text-align: left;      /* Keeps the text aligned left within the columns */
+}
+
+.skills-grid li {
+    width: 30%;            /* This creates the 3-column effect (30% x 3 = 90%) */
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Mobile Responsive: Switches to 1 column on small screens */
+@media (max-width: 600px) {
+    .skills-grid li {
+        width: 100%;
+    }
+}
