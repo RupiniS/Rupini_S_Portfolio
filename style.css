@@ -1,20 +1,35 @@
-body 
-{
+/* General Page Styling */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f6f9;
-    text-align: center;
+    padding: 40px 0; /* Space around the 'paper' */
+    background-color: #d1d5db; /* Grey background to make the sheet stand out */
+    display: flex;
+    justify-content: center; /* Centers the container on the screen */
 }
 
-header 
-{
+/* The A4 Sheet Container */
+.page-container {
+    background-color: white;
+    width: 210mm; /* A4 Width */
+    min-height: 297mm; /* A4 Height */
+    padding: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15); /* Shadow for depth */
+    text-align: left; /* Aligns all text inside to the left */
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
     background-color: #0a66c2;
     color: white;
     padding: 50px 20px;
+    /* Pulls the header to the very edges of the container */
+    margin: -50px -50px 30px -50px; 
+    text-align: center; /* Keeps header text centered */
 }
 
-.button 
-{
+.button {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px;
@@ -23,38 +38,58 @@ header
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
-section 
-{
-    padding: 40px 20px;
+.button:hover {
+    background-color: #e1e9f4;
 }
 
-footer 
-{
-    background-color: #222;
-    color: white;
-    padding: 10px;
+/* Section Styling */
+section {
+    padding: 20px 0; /* Adjusted padding for better flow on the sheet */
 }
+
+h2 {
+    color: #0a66c2;
+    border-bottom: 2px solid #0a66c2;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Technical Skills Grid */
 .skills-grid {
     display: flex;
-    flex-wrap: wrap;       /* Allows items to move to the next line */
-    list-style-type: disc; /* Keeps the bullet points */
-    justify-content: center;
-    max-width: 900px;      /* Keeps the list from stretching too wide */
-    margin: 0 auto;        /* Centers the whole list block */
-    padding: 0;
-    text-align: left;      /* Keeps the text aligned left within the columns */
+    flex-wrap: wrap;       
+    list-style-type: disc; 
+    padding-left: 20px;    /* Indent bullet points from the left */
+    margin: 20px 0;        
+    text-align: left;      
 }
 
 .skills-grid li {
-    width: 30%;            /* This creates the 3-column effect (30% x 3 = 90%) */
+    width: 33%;            /* Clean 3-column layout */
     margin-bottom: 10px;
     font-size: 14px;
 }
 
-/* Mobile Responsive: Switches to 1 column on small screens */
+/* Footer Styling */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin: 40px -50px -50px -50px; /* Pulls footer to the edges */
+    text-align: center;
+}
+
+/* Mobile Responsive */
 @media (max-width: 600px) {
+    .page-container {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    
     .skills-grid li {
         width: 100%;
     }
